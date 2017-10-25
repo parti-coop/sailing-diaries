@@ -7,6 +7,8 @@
     = stylesheet_link_tag 'application', media: 'all'
     %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
 
+    = csrf_meta_tags
+
     %title
       항해일지
   %body{class: "app-#{params[:controller]} app-#{params[:controller]}-#{params[:action]}"}

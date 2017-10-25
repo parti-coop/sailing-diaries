@@ -1,0 +1,10 @@
+- if @item.present?
+  %p
+    != simple_format @item.content
+  %p
+    = @item.emotion
+
+  .control
+    = link_to '다른 아이템 보기', items_path
+.control
+  = link_to '쓰기', new_item_path
