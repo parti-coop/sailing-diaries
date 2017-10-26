@@ -1,11 +1,7 @@
 #main-title.text-center
-  오늘
-  %br
+  how was
   %span.text-bold
-    당신의 감정은
-  %br
-  어떤가요?
+    your day?
   %p
-    %i.fa.fa-chevron-circle-down
-    = link_to '쓰기', new_item_path
-#ocean
+    = link_to new_item_path do
+      %i.fa.fa-chevron-circle-down

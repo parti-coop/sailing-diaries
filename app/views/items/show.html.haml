@@ -1,7 +1,7 @@
 %p
   != simple_format @item.content
 %p
-  = @item.emotion
+  = @item.emotions
 
 .control
   = link_to '삭제', @item, method: :delete, data: { confirm: '정말 삭제하시겠습니까?'}

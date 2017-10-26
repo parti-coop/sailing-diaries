@@ -13,6 +13,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+
+    params[:item][:emotions].each do |title|
+      @item.emotions.build(title: title)
+    end
     if @item.save
       redirect_to @item
     else
@@ -30,6 +34,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:content, :emotion)
+    params.require(:item).permit(:content)
   end
+
 end

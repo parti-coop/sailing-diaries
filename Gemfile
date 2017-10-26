@@ -22,6 +22,7 @@ gem 'bootstrap-sass'
 gem 'masonry-rails'
 gem 'rails-ujs'
 gem 'jquery-rails'
+gem "select2-rails"
 
 # scheduler
 gem 'sidekiq'

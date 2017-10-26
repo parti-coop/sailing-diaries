@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025023604) do
+ActiveRecord::Schema.define(version: 20171026081848) do
+
+  create_table "emotions", force: :cascade do |t|
+    t.integer "item_id", null: false
+    t.string "title"
+    t.string "emoji"
+    t.index ["item_id"], name: "index_emotions_on_item_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "content", null: false
-    t.string "emotion", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
