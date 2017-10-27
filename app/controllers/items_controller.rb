@@ -17,7 +17,8 @@ class ItemsController < ApplicationController
       @item.emotions.build(title: title)
     end
     if @item.save
-      redirect_to @item
+      flash.now[:notice] = 'Enjoy the rest of your day!'
+      redirect_to root_url
     else
       render 'new'
     end

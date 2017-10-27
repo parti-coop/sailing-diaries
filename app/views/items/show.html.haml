@@ -1,13 +1,15 @@
 - colorMap = {'Joy': '#FA8DBE', 'Happy': '#FAAA94', 'Satisfied': '#FCEDB7', 'Fun': '#90E3D5', 'Depressed': '#79D7FC', 'Exhausted': '#C2B0E9', 'Annoyed': '#D362E8', 'Nervous': '#7B78EB'}
+- background_option = @item.emotions.map { |emotion| colorMap.select { |k, _| k.to_s == emotion.title }.map { |_, v| v }.join(',') }.join(', ')
 
-- gradient_option = "linear-gradient(";
-- gradient_option += @item.emotions.map { |emotion| colorMap.select { |k, _| k.to_s == emotion.title }.map { |_, v| v }.join(',') }.join(', ')
-- gradient_option += ")"
+- if @item.emotions.count > 1
+  - background_style = "background:linear-gradient(" + background_option + ")";
+- else
+  - background_style = "background-color:" + background_option
 
-%section#show-section{style:"background:#{gradient_option}"}
+%section#show-section{style:"#{background_style}"}
   .container
     %p.content
-      = @item.content
+      = @item.content.truncate(110)
     .meta
       = @item.created_at.to_date
       %br
