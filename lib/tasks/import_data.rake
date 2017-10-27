@@ -1,8 +1,8 @@
 namespace :data do
 
   desc 'import excel data'
-  task :import => :environment do
-    xlsx = Roo::Spreadsheet.open "/Users/ganguri/Downloads/sa_da.xlsx"
+  task :import, [:path] => :environment do |task, args|
+    xlsx = Roo::Spreadsheet.open args.path
     xlsx.sheet(0).each_row_streaming(offset: 1, pad_cells: true) do |row|
       if row[1].blank?
         break

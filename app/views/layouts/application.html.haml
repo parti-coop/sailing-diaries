@@ -22,5 +22,5 @@
     = yield
 
     = javascript_include_tag 'application'
-
+    %script{:src => "//d3js.org/d3.v3.min.js"}
     = yield :script if content_for?(:script)
