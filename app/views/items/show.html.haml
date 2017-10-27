@@ -1,6 +1,10 @@
-- content_for :header do
-  %section
-%section#show-section
+- colorMap = {'Joy': '#FA8DBE', 'Happy': '#FAAA94', 'Satisfied': '#FCEDB7', 'Fun': '#90E3D5', 'Depressed': '#79D7FC', 'Exhausted': '#C2B0E9', 'Annoyed': '#D362E8', 'Nervous': '#7B78EB'}
+
+- gradient_option = "linear-gradient(";
+- gradient_option += @item.emotions.map { |emotion| colorMap.select { |k, _| k.to_s == emotion.title }.map { |_, v| v }.join(',') }.join(', ')
+- gradient_option += ")"
+
+%section#show-section{style:"background:#{gradient_option}"}
   .container
     %p.content
       = @item.content
@@ -9,6 +13,5 @@
       %br
       - @item.emotions.each do |emotion|
         %img{src: asset_url("#{emotion.title}_Emoji.png")}
-
     .control{style:"display:none;"}
       = link_to '삭제', @item, method: :delete, data: { confirm: '정말 삭제하시겠습니까?'}
