@@ -1,0 +1,21 @@
+%section#dashboard-section
+  %table
+    %tr
+      %td.graph
+        %table.inner-table
+          %tr
+            %td
+            %td
+              .period-box.text-center
+                2017.10.18 ~ 2017.10.21
+              %h1
+              Sailing
+              %br
+              Diary
+              %br
+              %span{style:"display:block;margin-top:-10px;"}
+                A week
+      %td.feed
+        %h3
+          how was your day?
+        = render :partial => 'items/show', :locals => {:id => 4000}
