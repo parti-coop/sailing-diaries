@@ -23,6 +23,10 @@ $(document).ready(function(){
   //multiple select
   $( "#js-emoji-select" ).select2();
 
+  $(".show-item").click(function(){;
+    $(".card").toggleClass('flipped');
+  });
+
   //slide show
   $( "#js-slideshow > div:gt(0)" ).hide();
   setInterval(function() {

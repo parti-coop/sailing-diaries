@@ -11,7 +11,7 @@
         Diary
         %br
         %span{style:"display:block;margin-top:-10px;"}
-          A week
+          A month
     #js-slideshow
       .multi-repeating-linear-7
         .period-box.text-center
@@ -29,4 +29,8 @@
     %h3
       how was your day?
     .show-item
-      = render :partial => 'items/show', :locals => {:id => 4000}
+      .card
+        .card-item
+          = render :partial => 'items/show', :locals => {:item => Item.find(4000)}
+        .card-item
+          = render :partial => 'items/show', :locals => {:item => Item.find(3989)}
