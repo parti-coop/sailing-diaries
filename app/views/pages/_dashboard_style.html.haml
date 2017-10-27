@@ -1,14 +1,12 @@
-- size_size_640 = Item.sizes(640, month)
-- size_size_480 = Item.sizes(480, month)
-- size_size_800 = Item.sizes(800, month)
+- size_size_640 = Item.sizes(340, month)
+- size_size_480 = Item.sizes(280, month)
+- size_size_800 = Item.sizes(400, month)
 
-- ops = Item.ops(0.5, month)
+- ops = Item.ops(0.7, month)
 :css
   .multi-repeating-linear-#{month} {
-    display: inline-block;
-    height: 900px;
-    width: 940px;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     background:
       repeating-linear-gradient(190deg,
         hsla(332.9, 91.2%, 86.7%, #{ops[0]}) #{size_size_640[0]}px,
@@ -37,5 +35,5 @@
         hsla(241.6,74.2%,69.6%, 1) #{size_size_800[5]}px,
         hsla(258.9,56.4%,80.2%, 1) #{size_size_800[6]}px,
         rgba(207, 176, 233, 1) #{size_size_800[7]}px);
-    background-blend-mode: normal;
+    background-blend-mode: screen;
   }

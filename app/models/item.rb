@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   end
 
   def self.count_king_emotions(month)
-    Emotion.where(item_id: Item.by_month(month)).group(:title).count.max[1]
+    Emotion.where(item_id: Item.by_month(month)).group(:title).count.values.max
   end
 
   def self.count_month(month)

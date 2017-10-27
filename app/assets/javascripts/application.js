@@ -23,6 +23,17 @@ $(document).ready(function(){
   //multiple select
   $( "#js-emoji-select" ).select2();
 
+  //slide show
+  $( "#js-slideshow > div:gt(0)" ).hide();
+  setInterval(function() {
+    $('#js-slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#js-slideshow');
+  }, 3000);
+
   // $('.form-group').mouseover(function(){
   //   var flag = $(this).hasClass("changed");
   //   if(!flag){
