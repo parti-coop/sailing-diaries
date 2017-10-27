@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.order('RANDOM()').first
+    @item = Item.order('RAND()').first
   end
 
   def show

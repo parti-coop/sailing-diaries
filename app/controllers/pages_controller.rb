@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @item = Item.last
+    @item = Item.order('RAND()').first
   end
 
 end
