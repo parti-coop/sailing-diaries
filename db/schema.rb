@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20171027060410) do
     t.index ["item_id"], name: "index_emotions_on_item_id"
   end
 
-  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC" do |t|
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
