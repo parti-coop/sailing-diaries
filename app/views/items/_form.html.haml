@@ -1,9 +1,13 @@
 = form_for @item do |f|
   .form-group
-    = f.label :emotions
+    = f.label :emotions, 'I am feeling.....'
     = f.select :emotions, {'Joy': 'Joy', 'Happy': 'Happy', 'Satisfied': 'Satisfied', 'Fun': 'Fun', 'Depressed': 'Depressed', 'Exhausted': 'Exhausted', 'Annoyed': 'Annoyed', 'Nervous': 'Nervous'}, {}, class: 'form-control', id: 'js-emoji-select', multiple: 'multiple'
   .form-group{style:"margin-top:40px;"}
-    = f.label :content
+    = f.label :content, 'Because today....'
     = f.text_area :content, rows: 10, class: 'form-control'
-  .form-group.pull-right{style:"margin-top:40px;"}
-    = f.submit 'save', class: 'btn btn-primary'
+  .form-group{style:"margin-top:40px;"}
+    .pull-left
+      %button.btn.btn-default
+        back
+    .pull-right
+      = f.submit 'save', class: 'btn btn-primary'

@@ -11,14 +11,20 @@ body{
 }
 
 .btn{
-  box-shadow: 2px 2px 0px #6663c3;
   background-color: #b39fdc;
   border-radius: 2px;
   border: 0px;
   padding: 10px 30px;
-  &:hover{
-    background-color: #7B78EB;
-  }
+}
+
+.btn-default{
+  background-color: dimgray;
+  color: white;
+}
+
+.btn-primary{
+  background-color: #b39fdc;
+  color: white;
 }
 
 a{

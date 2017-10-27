@@ -12,12 +12,12 @@
     %title
       항해일지
   %body{class: "app-#{params[:controller]} app-#{params[:controller]}-#{params[:action]}"}
-    - unless content_for?(:header)
-      %section
-        %nav.navbar.navbar-default.navbar-static-top
-          .container{style:"margin: 20px;"}
-            .text-center.header-title
-              Sailing Diary
+    / - unless content_for?(:header)
+    /   %section
+    /     %nav.navbar.navbar-default.navbar-static-top
+    /       .container{style:"margin: 20px;"}
+    /         .text-center.header-title
+    /           Sailing Diary
 
     = yield
 

@@ -14,10 +14,18 @@
     font-weight: 900;
   }
 
-  p.meta{
+  .meta{
     border-top: 1px solid white;
     padding: 20px 0px;
     color: white;
+    line-height: 30px;
+    bottom: 0;
+    position: absolute;
+    width: 80%;
+    img{
+      width: 45px;
+      height: 45px;
+    }
   }
 }
 

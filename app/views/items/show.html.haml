@@ -4,13 +4,11 @@
   .container
     %p.content
       = @item.content
-    %p.meta
+    .meta
       = @item.created_at.to_date
       %br
       - @item.emotions.each do |emotion|
-        /%img{src: asset_url('#{emotion.title}_Emoji.png')}
+        %img{src: asset_url("#{emotion.title}_Emoji.png")}
 
     .control{style:"display:none;"}
       = link_to '삭제', @item, method: :delete, data: { confirm: '정말 삭제하시겠습니까?'}
-
-}

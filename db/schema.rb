@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026081848) do
+ActiveRecord::Schema.define(version: 20171027060410) do
 
-  create_table "emotions", force: :cascade do |t|
-    t.integer "item_id", null: false
+  create_table "emotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.bigint "item_id", null: false
     t.string "title"
     t.string "emoji"
     t.index ["item_id"], name: "index_emotions_on_item_id"
   end
 
-  create_table "items", force: :cascade do |t|
-    t.string "content", null: false
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

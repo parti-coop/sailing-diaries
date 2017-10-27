@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    params[:item][:emotions].each do |title|
+    params[:item][:emotions].reject { |e| e.blank? }.each do |title|
       @item.emotions.build(title: title)
     end
     if @item.save
