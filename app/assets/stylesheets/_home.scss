@@ -1,4 +1,25 @@
-
+#welcome-section{
+  height: 100%;
+  background-color: #A38AD4;
+  h2{
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .title-box{
+    margin-top: 250px;
+    width: 300px;
+    margin: 0 auto;
+    .btn-default{
+      width: 100%;
+      background-color: white;
+      color: black;
+      font-size: 40px;
+      font-weight: 900;
+    }
+  }
+}
 .header-title{
   color: white;
   font-weight: bolder;

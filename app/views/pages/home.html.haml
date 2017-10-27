@@ -1,13 +1,8 @@
-= render 'pages/dashboard_style', month: 7
-= render 'pages/dashboard_style', month: 8
-= render 'pages/dashboard_style', month: 9
-= render 'pages/dashboard_style', month: 10
-%section
-  .container{style:"font-size:12px;"}
-    %hr
-    .slideshow-container
-      #js-slideshow
-        .multi-repeating-linear-7 7월
-        .multi-repeating-linear-8 8월
-        .multi-repeating-linear-9 9월
-        .multi-repeating-linear-10 10월
+%section#welcome-section
+  .container
+    .title-box.text-left
+      %h2
+        How are you
+        %br
+        feeling today?
+      = link_to 'Tell us !', new_item_path, class: 'btn btn-default'
