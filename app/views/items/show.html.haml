@@ -1,7 +1,16 @@
-%p
-  != simple_format @item.content
-%p
-  = @item.emotions
+- content_for :header do
+  %section
+%section#show-section
+  .container
+    %p.content
+      = @item.content
+    %p.meta
+      = @item.created_at.to_date
+      %br
+      - @item.emotions.each do |emotion|
+        /%img{src: asset_url('#{emotion.title}_Emoji.png')}
 
-.control
-  = link_to '삭제', @item, method: :delete, data: { confirm: '정말 삭제하시겠습니까?'}
+    .control{style:"display:none;"}
+      = link_to '삭제', @item, method: :delete, data: { confirm: '정말 삭제하시겠습니까?'}
+
+}

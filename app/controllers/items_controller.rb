@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-
     params[:item][:emotions].each do |title|
       @item.emotions.build(title: title)
     end

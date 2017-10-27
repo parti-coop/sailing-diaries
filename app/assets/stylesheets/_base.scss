@@ -1,34 +1,38 @@
+html,body{
+  height: 100%;
+}
 *,
 body {
     font-family: 'Source Han Sans KR', 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Source Sans Pro', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
 }
 
+body{
+  background-color: #eeeeee;
+}
+
 .btn{
   box-shadow: 2px 2px 0px #6663c3;
-  background-color: #7B78EB;
+  background-color: #b39fdc;
   border-radius: 2px;
   border: 0px;
   padding: 10px 30px;
   &:hover{
-    background-color: lighten(#7B78EB, 5%) !important;
+    background-color: #7B78EB;
   }
 }
 
-.container{
-  margin:20px;
-}
-
-body{
-  background-color: #B39FDC;
-}
-
 a{
-  color: white;
+  color: dimgray;
 }
 
 label{
-  color: white;
-  border-bottom: 1px solid white;
+  color: dimgray;
+  border-bottom: 1px solid dimgray;
   padding: 0px 0px 5px 0px;
   margin-bottom: 20px
+}
+
+.navbar{
+  background-color: #b39fdc;
+  margin-bottom: 0px;
 }

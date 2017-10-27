@@ -1,7 +1,7 @@
 = form_for @item do |f|
   .form-group
     = f.label :emotions
-    = f.select :emotions, {'감정1': 'emotion1', '감정2': 'emotion2', '감정3': 'emotion3'}, {}, class: 'form-control', id: 'js-emoji-select', multiple: 'multiple'
+    = f.select :emotions, {'Joy': 'Joy', 'Happy': 'Happy', 'Satisfied': 'Satisfied', 'Fun': 'Fun', 'Depressed': 'Depressed', 'Exhausted': 'Exhausted', 'Annoyed': 'Annoyed', 'Nervous': 'Nervous'}, {}, class: 'form-control', id: 'js-emoji-select', multiple: 'multiple'
   .form-group{style:"margin-top:40px;"}
     = f.label :content
     = f.text_area :content, rows: 10, class: 'form-control'
