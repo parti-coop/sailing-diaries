@@ -28,12 +28,11 @@ $(document).ready(function(){
   //slide show
   $( "#js-slideshow > div:gt(0)" ).hide();
   setInterval(function() {
-    $('#js-slideshow > div:first')
-    .fadeOut(1000)
-    .next()
-    .fadeIn(1000)
-    .end()
-    .appendTo('#js-slideshow');
+    $.ajax({
+      url: $('#js-slideshow').data('url'),
+      type: "get",
+      data:{ month: $('#js-slideshow div:first').data('month') },
+    });
   }, 16000);
 
   // $('.form-group').mouseover(function(){
