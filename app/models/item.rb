@@ -18,6 +18,7 @@ class Item < ApplicationRecord
     %w(Joy Happy Satisfied Fun Depressed Exhausted Annoyed Nervous).each do |emotion_title|
       result << size(total, month, emotion_title, result.try(:last) || 0)
     end
+    result << result.last + result[0] / 2
 
     result
   end
@@ -31,7 +32,6 @@ class Item < ApplicationRecord
     %w(Joy Happy Satisfied Fun Depressed Exhausted Annoyed Nervous).each do |emotion_title|
       result << max * count_emotions(month, emotion_title) / count_king_emotions(month)
     end
-
     result
   end
 end

@@ -34,7 +34,7 @@ $(document).ready(function(){
     .fadeIn(1000)
     .end()
     .appendTo('#js-slideshow');
-  }, 3000);
+  }, 16000);
 
   // $('.form-group').mouseover(function(){
   //   var flag = $(this).hasClass("changed");
