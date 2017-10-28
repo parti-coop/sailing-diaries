@@ -2,16 +2,18 @@
 - color_map_light_ratio = '0.5'
 - color_map_light = { 'Joy': "hsla(332.9, 91.2%, 86.7%, #{color_map_light_ratio})" , 'Happy': "hsla(12.9, 91.1%, 78%, #{color_map_light_ratio})" , 'Satisfied': "hsla(47, 92%, 85.3%, #{color_map_light_ratio})" , 'Fun': "hsla(169.9, 59.7%, 72.7%, #{color_map_light_ratio})" , 'Depressed': "hsla(196.9, 95.6%, 73.1%, #{color_map_light_ratio})" , 'Exhausted': "hsla(241.6, 74.2%, 69.6%, #{color_map_light_ratio})" , 'Annoyed': "hsla(258.9, 56.4%, 80.2%, #{color_map_light_ratio})" , 'Nervous': "rgba(207, 176, 233, #{color_map_light_ratio})" }
 
-- if item.emotions.count > 1
-  - background_option = item.emotions.map { |emotion| color_map.select { |k, _| k.to_s == emotion.title }.map { |_, v| v }.join(',') }.join(', ')
+- if item.emotions.any?
+  - if item.emotions.count > 1
+    - background_option = item.emotions.map { |emotion| color_map.select { |k, _| k.to_s == emotion.title }.map { |_, v| v }.join(',') }.join(', ')
+  - elsif item.emotions.count == 1
+    - color = color_map[item.emotions.first.title.to_sym]
+    - color_map_light = color_map_light[item.emotions.first.title.to_sym]
+    - background_option = "#{color}, #{color_map_light}"
+  - background_style = "background:linear-gradient(" + background_option + ")";
 - else
-  - color = color_map[item.emotions.first.title.to_sym]
-  - color_map_light = color_map_light[item.emotions.first.title.to_sym]
-  - background_option = "#{color}, #{color_map_light}"
+  - background_style = "";
 
-- background_style = "background:linear-gradient(" + background_option + ")";
-
-#show-area{style:"#{background_style}"}
+.show-area{style:"#{background_style}"}
   %p.content
     = item.content.truncate(150)
   .meta
