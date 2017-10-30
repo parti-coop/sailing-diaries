@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "pages#home"
   get 'dashboard', to: 'pages#dashboard'
   get 'refresh_dashboard', to: 'pages#refresh_dashboard'
+  get 'random_items', to: 'items#random'
   resources :items
 end

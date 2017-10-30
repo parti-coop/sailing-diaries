@@ -63,9 +63,8 @@
   .feed
     %h3
       How was your day?
-    .show-item
+    .show-item{ "data-url": random_items_path }
       .card
         .card-item
           = render 'items/show', item: @item
         .card-item
-          = render 'items/show', item: @item2

@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def random
+    @item = Item.order('RAND()').where.not(id: params[:current_item_ids]).first
+  end
+
   def new
     @item = Item.new
   end

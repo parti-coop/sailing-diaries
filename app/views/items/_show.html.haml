@@ -13,7 +13,7 @@
 - else
   - background_style = "";
 
-.show-area{style:"#{background_style}"}
+.show-area[item]{ style:"#{background_style}", 'data-item-id': item.id }
   %p.content
     = item.content.truncate(220)
   .meta

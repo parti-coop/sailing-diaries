@@ -1,0 +1,3 @@
+var $target = $(".card").hasClass('flipped') ? $(".card > .card-item:first-child") : $(".card > .card-item:last-child");
+$target.html('<%= escape_javascript(render 'items/show', item: @item ) %>')
+$(".card").toggleClass('flipped');

@@ -21,9 +21,21 @@ $(document).ready(function(){
   //multiple select
   $( "#js-emoji-select" ).select2();
 
-  $(".show-item").click(function(){;
-    $(".card").toggleClass('flipped');
-  });
+  // $(".show-item").click(function(){;
+  //   $(".card").toggleClass('flipped');
+  // });
+
+  setInterval(function() {
+    var ids = [
+      $($(".show-item .card .show-area")[0]).data('item-id'),
+      $($(".show-item .card .show-area")[1]).data('item-id')
+    ].filter( function(n){ return n !== undefined } );
+    $.ajax({
+      url: $(".show-item").data('url'),
+      type: "get",
+      data:{ 'current_item_ids[]' : ids },
+    });
+  }, 10000);
 
   //slide show
   $( "#js-slideshow > div:gt(0)" ).hide();
