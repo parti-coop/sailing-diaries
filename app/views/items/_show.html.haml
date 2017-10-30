@@ -15,7 +15,7 @@
 
 .show-area[item]{ style:"#{background_style}", 'data-item-id': item.id }
   %p.content
-    = item.content.truncate(100)
+    = item.content.truncate(70)
   .meta
     = item.created_at.to_date
     %br
