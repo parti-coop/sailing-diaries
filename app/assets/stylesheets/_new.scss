@@ -1,3 +1,17 @@
 #create-section{
-  padding: 50px 0px;
+  padding: 80px 0px;
+}
+.select2-selection__rendered{
+  height: 80px !important;
+}
+.select2-selection__choice{
+  font-size: 23px;
+  height: 35px;
+}
+.select2-results__option{
+  padding: 20px;
+  font-size: 30px;
+}
+label{
+  font-size: 50px;
 }
