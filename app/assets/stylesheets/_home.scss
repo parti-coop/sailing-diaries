@@ -1,23 +1,23 @@
 #welcome-section{
   height: 100%;
   background-color: #A38AD4;
-  padding-top: 160px;
+  padding-top: 280px;
   h2{
     color: white;
     font-weight: 900;
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 60px;
+    line-height: 90px;
   }
   .title-box{
-    margin-top: 250px;
-    width: 300px;
+    width: 450px;
     margin: 0 auto;
     .btn-default{
       width: 100%;
       background-color: white;
       color: black;
-      font-size: 40px;
+      font-size: 60px;
       font-weight: 900;
+      margin-top: 30px;
     }
   }
 }
