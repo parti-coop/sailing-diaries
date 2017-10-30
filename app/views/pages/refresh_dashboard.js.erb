@@ -1,7 +1,2 @@
-$('#js-slideshow > div:nth(1)').css('background', '<%= escape_javascript(render 'pages/background_style', month: params[:month]) %>');
-$('#js-slideshow > div:first')
-  .fadeOut(1000)
-  .next()
-  .fadeIn(1000)
-  .end()
-  .appendTo('#js-slideshow');
+$('#js-slideshow > .js-slide-item:nth(1)').css('background', '<%= escape_javascript(render 'pages/background_style', month: params[:month]) %>');
+

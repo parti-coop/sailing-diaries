@@ -40,11 +40,18 @@ $(document).ready(function(){
   //slide show
   $( "#js-slideshow > div:gt(0)" ).hide();
   setInterval(function() {
-    $.ajax({
-      url: $('#js-slideshow').data('url'),
-      type: "get",
-      data:{ month: $('#js-slideshow div:first').data('month') },
-    });
+    $('#js-slideshow > .js-slide-item:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000, function() {
+          $.ajax({
+            url: $('#js-slideshow').data('url'),
+            type: "get",
+            data:{ month: $('#js-slideshow > .js-slide-item:nth(1)').data('month') },
+          });
+      })
+      .end()
+      .appendTo('#js-slideshow');
   }, 16000);
 
   // $('.form-group').mouseover(function(){
